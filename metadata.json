@@ -1,0 +1,8 @@
+{
+  "name": "Web Design Agency Website",
+  "description": "A comprehensive multi-page website for a startup specializing in professional web design for small businesses, featuring a portfolio, pricing, and testimonials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

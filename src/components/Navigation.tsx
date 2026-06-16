@@ -46,7 +46,7 @@ export const Navigation: React.FC = () => {
               <Globe size={24} />
             </div>
             <span className="text-xl font-display font-bold text-neutral-900 tracking-tight">
-              Web<span className="text-primary-600">Forge</span>
+             Design <span className="text-primary-600">Pilot</span>
             </span>
           </NavLink>
 

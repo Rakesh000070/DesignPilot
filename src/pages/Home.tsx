@@ -36,17 +36,17 @@ const portfolio = [
   {
     title: 'GreenLeaf Organic',
     category: 'E-commerce',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop', // Fruits/Vegetables
+    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop',
   },
   {
     title: 'Precision Law Firm',
     category: 'Professional Services',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop', // Office
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
   },
   {
     title: 'Urban Fit Studio',
     category: 'Local Business',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop', // Gym
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop',
   },
 ];
 
@@ -68,21 +68,21 @@ const testimonials = [
 const pricing = [
   {
     name: 'Starter',
-    price: '$299',
+    price: '₹1999',
     description: 'Perfect for new businesses or personal brands looking to grow.',
     features: ['3 Pages', 'Mobile Responsive', 'Basic SEO', 'Contact Form', '5 Day Delivery'],
     recommended: false,
   },
   {
     name: 'Business',
-    price: '$699',
+    price: '₹4299',
     description: 'Everything you need to grow your business online effectively.',
     features: ['7 Pages', 'Advanced SEO', 'Google Analytics', '3 Revision Rounds', '10 Day Delivery'],
     recommended: true,
   },
   {
     name: 'Premium',
-    price: '$1,499',
+    price: '₹5999',
     description: 'A complete professional website with all features included.',
     features: ['15+ Pages', 'Full SEO', 'Blog & Booking', 'Priority Support', '21 Day Delivery'],
     recommended: false,
@@ -108,82 +108,159 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-white border-b border-neutral-50">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_70%_20%,#eef2ff_0%,transparent_50%)] opacity-70"></div>
+      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-indigo-50/50"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
+          <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-primary-200/20 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-[120px]"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
               className="max-w-2xl"
             >
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                <Zap size={14} className="mr-2" />
-                Empowering Small Businesses
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-neutral-900 leading-[1.1] mb-6 tracking-tight">
-                Professional Websites <br/> 
-                <span className="text-primary-600">That Drive Growth</span>
-              </h1>
-              <p className="text-lg md:text-xl text-neutral-600 mb-10 leading-relaxed max-w-xl">
-                We craft bespoke digital experiences tailored to your business. Turn visitors into loyal customers with a high-performance website that looks stunning on every device.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <NavLink 
-                  to="/contact" 
-                  className="px-8 py-4 bg-primary-600 text-white rounded-full font-semibold text-lg hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 flex items-center justify-center group"
-                >
-                  Start Your Project
-                  <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </NavLink>
-                <NavLink 
-                  to="/portfolio" 
-                  className="px-8 py-4 bg-white text-neutral-900 border-2 border-neutral-200 rounded-full font-semibold text-lg hover:border-primary-600 hover:text-primary-600 transition-all flex items-center justify-center"
-                >
-                  View Our Work
-                </NavLink>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100/50 text-primary-700 text-sm font-bold uppercase tracking-wider mb-6 backdrop-blur-sm border border-primary-200/50">
+                <Zap size={16} className="mr-2 fill-primary-600" />
+                Next-Gen Web Solutions
               </div>
               
-              <div className="mt-12 flex items-center space-x-6 text-sm text-neutral-500">
-                <div className="flex items-center">
-                  <ShieldCheck size={18} className="text-primary-500 mr-2" />
-                  No Hidden Fees
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-neutral-900 leading-[1.05] mb-5 tracking-tight">
+                We Build Websites That <br/> 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-neutral-900 font-black">Bring You More Clients</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-neutral-600 mb-8 leading-relaxed max-w-xl font-medium">
+                High-performance, stunning designs crafted to convert visitors into loyal customers. Elevate your professional presence today.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
+                <div className="w-full sm:w-auto">
+                  <NavLink 
+                    to="/contact" 
+                    className="group relative inline-flex items-center justify-center px-10 py-5 bg-gradient-to-br from-primary-600 to-primary-500 text-white rounded-full font-bold text-xl hover:shadow-[0_20px_40px_rgba(245,89,81,0.4)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto overflow-hidden active:scale-95 ring-8 ring-primary-100/50"
+                  >
+                    <div className="absolute inset-0 bg-white/20 translate-y-full hover:translate-y-0 group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-white/0 to-white/10"></div>
+                    <span className="relative z-10 flex items-center">
+                      Get a Free Consultation
+                      <ArrowRight size={24} className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                    </span>
+                  </NavLink>
+                  
+                  <div className="mt-4 flex items-center justify-center sm:justify-start space-x-2 text-sm font-semibold text-neutral-500">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-neutral-200 overflow-hidden">
+                          <img src={`https://i.pravatar.cc/100?img =${i + 10}`} alt="User" className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                    <span>Trusted by 50+ businesses</span>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Monitor size={18} className="text-primary-500 mr-2" />
-                  Free Consulting
+
+                <div className="hidden sm:block w-px h-16 bg-neutral-200 mx-4"></div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full sm:w-auto">
+                  <div className="flex items-center space-x-3 text-neutral-700 font-semibold italic">
+                    <Star size={18} className="text-yellow-400 fill-yellow-400" />
+                    <span>5-Star Rated</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-neutral-700 font-semibold italic">
+                    <ShieldCheck size={18} className="text-green-500" />
+                    <span>Guaranteed Results</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mini Feature Row */}
+              <div className="pt-8 border-t border-neutral-200/60 grid grid-cols-3 gap-6">
+                <div className="flex flex-col items-start">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-neutral-100 flex items-center justify-center text-primary-600 mb-3">
+                    <Zap size={20} className="fill-primary-100" />
+                  </div>
+                  <span className="text-sm font-bold text-neutral-900 leading-tight">Ultra Fast<br/>Performance</span>
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-neutral-100 flex items-center justify-center text-primary-600 mb-3">
+                    <Smartphone size={20} />
+                  </div>
+                  <span className="text-sm font-bold text-neutral-900 leading-tight">Mobile First<br/>Responsive</span>
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-neutral-100 flex items-center justify-center text-primary-600 mb-3">
+                    <Search size={20} />
+                  </div>
+                  <span className="text-sm font-bold text-neutral-900 leading-tight">Expert SEO<br/>Optimized</span>
                 </div>
               </div>
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.9, x: 50 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-16 lg:mt-0 relative hidden lg:block"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white text-[0]">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Modern web design dashboard" 
-                  className="w-full h-auto"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="relative">
+                <div className="absolute -top-10 -right-10 w-52 h-52 bg-primary-600/10 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-indigo-600/10 rounded-full blur-3xl"></div>
+                
+                <div className="relative z-10 p-4 bg-white/50 backdrop-blur-md rounded-3xl border border-white/50 shadow-2xl">
+                  <div className="rounded-2xl overflow-hidden shadow-xl border border-neutral-200/50 text-[0]">
+                    <img 
+                      src="Images/Home-pade-image.jpeg" 
+                      alt="Modern web design dashboard showing performance metrics" 
+                      className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+
+                <motion.div 
+                  className="absolute -bottom-5 -right-5 bg-white p-3 rounded-2xl shadow-2xl border border-neutral-100 z-20 flex items-center space-x-3 pr-8"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                    <CheckCircle2 size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Business Growth</div>
+                    <div className="text-lg font-bold text-neutral-900">+84% Conversions</div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="absolute top-8 -left-8 bg-white p-3 rounded-2xl shadow-2xl border border-neutral-100 z-20 flex items-center space-x-3 pr-6"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                >
+                  <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
+                    <Layers size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Design System</div>
+                    <div className="text-lg font-bold text-neutral-900">Modern UI/UX</div>
+                  </div>
+                </motion.div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary-600/10 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -top-8 -left-8 w-32 h-32 bg-primary-600/5 rounded-full blur-2xl -z-10"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-neutral-50">
+      <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">Our Expertise</h2>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Our Expertise</h2>
             <p className="text-lg text-neutral-600">Everything you need to succeed online, from concept to launch and beyond.</p>
           </div>
           
@@ -192,7 +269,7 @@ const Home: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {services.map((service, index) => (
               <motion.div 
@@ -200,11 +277,11 @@ const Home: React.FC = () => {
                 variants={itemVariants}
                 className="bg-white p-8 rounded-2xl border border-neutral-100 hover:border-primary-200 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-5 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                   <service.icon size={28} />
                 </div>
-                <h3 className="text-xl font-display font-bold text-neutral-900 mb-3">{service.title}</h3>
-                <p className="text-neutral-600 mb-6 leading-relaxed">
+                <h3 className="text-xl font-display font-bold text-neutral-900 mb-2">{service.title}</h3>
+                <p className="text-neutral-600 mb-5 leading-relaxed">
                   {service.description}
                 </p>
                 <NavLink to="/services" className="text-primary-600 font-semibold flex items-center group/link">
@@ -217,11 +294,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">Selected Works</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Selected Works</h2>
               <p className="text-lg text-neutral-600">Take a look at how we've helped other small businesses achieve digital excellence.</p>
             </div>
             <NavLink to="/portfolio" className="px-6 py-3 border-2 border-neutral-200 rounded-full font-semibold hover:border-primary-600 hover:text-primary-600 transition-all">
@@ -229,7 +306,7 @@ const Home: React.FC = () => {
             </NavLink>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {portfolio.map((project, index) => (
               <motion.div 
                 key={index}
@@ -239,7 +316,7 @@ const Home: React.FC = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="relative rounded-2xl overflow-hidden mb-6 aspect-[4/3] shadow-md text-[0]">
+                <div className="relative rounded-2xl overflow-hidden mb-4 aspect-[4/3] shadow-md text-[0]">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -251,7 +328,7 @@ const Home: React.FC = () => {
                     <span className="px-6 py-2 bg-white text-neutral-900 rounded-full font-semibold">View Case Study</span>
                   </div>
                 </div>
-                <div className="text-xs text-primary-600 font-bold uppercase tracking-widest mb-2">{project.category}</div>
+                <div className="text-xs text-primary-600 font-bold uppercase tracking-widest mb-1">{project.category}</div>
                 <h3 className="text-2xl font-display font-bold text-neutral-900 group-hover:text-primary-600 transition-colors">
                   {project.title}
                 </h3>
@@ -262,29 +339,29 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-primary-600 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+      <section className="py-16 bg-primary-600 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -mr-40 -mt-40 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Trusted by Founders</h2>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">Trusted by Founders</h2>
             <p className="text-lg text-primary-100">Don't just take our word for it. Here's what our clients have to say.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t, index) => (
               <motion.div 
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/20 text-white"
+                className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 text-white"
               >
-                <div className="flex mb-6">
+                <div className="flex mb-4">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} size={18} className="text-yellow-400 fill-yellow-400 mr-1" />
                   ))}
                 </div>
-                <p className="text-xl italic mb-8 leading-relaxed font-medium">"{t.quote}"</p>
+                <p className="text-xl italic mb-6 leading-relaxed font-medium">"{t.quote}"</p>
                 <div>
                   <div className="font-bold text-lg">{t.author}</div>
                   <div className="text-primary-200 text-sm">{t.role}</div>
@@ -296,14 +373,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* Pricing Preview */}
-      <section className="py-24 bg-neutral-50">
+      <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">Simple, Transparent Pricing</h2>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Simple, Transparent Pricing</h2>
             <p className="text-lg text-neutral-600">Choose the perfect package for your business growth. No setup fees, no surprises.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricing.map((plan, index) => (
               <motion.div 
                 key={index}
@@ -321,12 +398,12 @@ const Home: React.FC = () => {
                   </div>
                 )}
                 <h3 className="text-xl font-display font-bold text-neutral-900 mb-2">{plan.name}</h3>
-                <div className="mb-4">
+                <div className="mb-3">
                   <span className="text-4xl font-bold text-neutral-900">{plan.price}</span>
                   {plan.price !== 'Custom' && <span className="text-neutral-500 ml-1">one-time</span>}
                 </div>
-                <p className="text-sm text-neutral-500 mb-8">{plan.description}</p>
-                <ul className="space-y-4 mb-8">
+                <p className="text-sm text-neutral-500 mb-6">{plan.description}</p>
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center text-sm text-neutral-700">
                       <CheckCircle2 size={18} className={`${plan.recommended ? 'text-primary-600' : 'text-primary-400'} mr-3 shrink-0`} />
@@ -351,14 +428,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-neutral-900 rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary-600/20 rounded-full blur-3xl -mb-40 -mr-40"></div>
+          <div className="bg-neutral-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
+            <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary-600/20 rounded-full blur-3xl -mb-36 -mr-36"></div>
             <div className="relative z-10 text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">Ready to Forge Your Digital Presence?</h2>
-              <p className="text-lg text-neutral-300 mb-10 leading-relaxed">
-                Join dozens of small businesses that have modernized their brand with WebForge. Let's build something exceptional together.
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">Ready to Design Your Digital Presence?</h2>
+              <p className="text-lg text-neutral-300 mb-8 leading-relaxed">
+                Ready to transform your small businesses that have modernized their brand with DesignPilot. Let's build something exceptional together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <NavLink 

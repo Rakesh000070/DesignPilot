@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 const pricingPackages = [
   {
     name: "Starter",
-    price: "$299",
+    price: "₹1999",
     bestFor: "New businesses or personal brands",
     description: "Perfect for businesses that need a simple online presence",
     features: [
@@ -32,7 +32,7 @@ const pricingPackages = [
   },
   {
     name: "Business",
-    price: "$699",
+    price: "₹4299",
     bestFor: "Growing small businesses",
     badge: "Most Popular",
     description: "Everything you need to grow your business online",
@@ -52,7 +52,7 @@ const pricingPackages = [
   },
   {
     name: "Premium",
-    price: "$1,499",
+    price: "₹5999",
     bestFor: "Established businesses wanting full service",
     description: "A complete professional website with all features included",
     features: [

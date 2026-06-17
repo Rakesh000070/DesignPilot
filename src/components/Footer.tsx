@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
                 <Globe size={24} />
               </div>
               <span className="text-xl font-display font-bold text-white tracking-tight">
-                Web<span className="text-primary-500">Forge</span>
+                Design<span className="text-primary-500">Pilot</span>
               </span>
             </NavLink>
             <p className="text-neutral-400 leading-relaxed text-sm">
@@ -89,11 +89,11 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm">
                 <MapPin size={18} className="text-primary-500 shrink-0 mt-0.5" />
-                <span>123 Design Lane, Creative District<br />San Francisco, CA 94103</span>
+                <span>Infocity / Chandaka Industrial Estate, Chandrasekharpur,<br />Bhubaneswar, Odisha – 751024, India</span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Phone size={18} className="text-primary-500 shrink-0" />
-                <span>+1 (555) 000-0000</span>
+                <span>+91 9777094193</span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Mail size={18} className="text-primary-500 shrink-0" />
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-500 space-y-4 md:space-y-0">
-          <p>© {currentYear} WebForge Digital Agency. All rights reserved.</p>
+          <p>© {currentYear}  DesignPilot Agency. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="hover:text-primary-500 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary-500 transition-colors">Terms of Service</a>

@@ -44,13 +44,20 @@ export const Footer: React.FC = () => {
               Empowering small businesses with world-class digital experiences. We turn your vision into a professional website that drives growth.
             </p>
             <div className="flex space-x-4">
-              {[Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
+              {[
+                { Icon: Twitter, url: '#' },
+                { Icon: Instagram, url: 'https://www.instagram.com/designpilot_16?igsh=bGVvczBrcTBzczE5' },
+                { Icon: Linkedin, url: '#' },
+                { Icon: Github, url: '#' },
+              ].map((social, i) => (
                 <a 
                   key={i} 
-                  href="#" 
+                  href={social.url} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all text-neutral-400"
                 >
-                  <Icon size={18} />
+                  <social.Icon size={18} />
                 </a>
               ))}
             </div>

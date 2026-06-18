@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
     email: '',
     phone: '',
     businessType: 'Restaurant',
-    budget: 'Under $500',
+    budget: 'Under ₹1999',
     message: '',
   });
 
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleChange}
-                          placeholder="issac dip"
+                          placeholder="Issac dip"
                           className={`w-full px-5 py-4 bg-neutral-50 rounded-xl border transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 ${
                             errors.fullName ? 'border-rose-400 bg-rose-50/30' : 'border-neutral-200 focus:border-primary-500'
                           }`}
@@ -211,9 +211,11 @@ const Contact: React.FC = () => {
                           className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-neutral-200 transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:20px] bg-[right_1.25rem_center] bg-no-repeat"
                         >
                           <option>Restaurant</option>
+                          <option>Cafe</option>
                           <option>Salon</option>
                           <option>Retail</option>
-                          <option>Consulting</option>
+                          <option>Franchise</option>
+                          <option>Institute</option>
                           <option>Other</option>
                         </select>
                       </div>
@@ -227,10 +229,10 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-neutral-200 transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:20px] bg-[right_1.25rem_center] bg-no-repeat"
                       >
-                        <option>Under $500</option>
-                        <option>$500–$1000</option>
-                        <option>$1000–$2000</option>
-                        <option>$2000+</option>
+                        <option>₹1999</option>
+                        <option>₹1999-₹4999</option>
+                        <option>₹4999-₹7999</option>
+                        <option>₹10999 more</option>
                       </select>
                     </div>
 
@@ -334,8 +336,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-neutral-900 mb-1 font-sans">Business Hours</h4>
-                    <p className="text-neutral-600 text-lg font-medium">Monday – Friday</p>
-                    <p className="text-neutral-500 font-medium italic">9 AM – 6 PM PST</p>
+                    <p className="text-neutral-600 text-lg font-medium">Monday – Saturday</p>
+                    <p className="text-neutral-500 font-medium italic">9 AM – 6 PM IST</p>
                   </div>
                 </div>
 
@@ -358,14 +360,16 @@ const Contact: React.FC = () => {
                 <h4 className="text-xl font-display font-bold text-neutral-900 mb-6 font-display">Follow Us</h4>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Twitter, color: 'hover:bg-[#1DA1F2]' },
-                    { icon: Instagram, color: 'hover:bg-[#E1306C]' },
-                    { icon: Linkedin, color: 'hover:bg-[#0077B5]' },
-                    { icon: Github, color: 'hover:bg-[#333]' },
+                    { icon: Twitter, color: 'hover:bg-[#1DA1F2]', url: '#' },
+                    { icon: Instagram, color: 'hover:bg-[#E1306C]', url: 'https://www.instagram.com/designpilot_16?igsh=bGVvczBrcTBzczE5' },
+                    { icon: Linkedin, color: 'hover:bg-[#0077B5]', url: '#' },
+                    { icon: Github, color: 'hover:bg-[#333]', url: '#' },
                   ].map((social, i) => (
                     <a 
                       key={i} 
-                      href="#" 
+                      href={social.url} 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-14 h-14 bg-neutral-50 rounded-full flex items-center justify-center text-neutral-400 ${social.color} hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1`}
                     >
                       <social.icon size={22} />

@@ -39,19 +39,19 @@ const values = [
 
 const team = [
   {
-    name: 'Alex Rivera',
+    name: 'Rakesh Nayak',
     role: 'Founder & Principal Designer',
-    bio: 'With over 10 years in the industry, Alex started WebForge to help local businesses thrive online.',
+    bio: 'With over 10 years in the industry, Rakesh started DesignPilot to help local businesses thrive online.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop',
   },
   {
-    name: 'Sarah Chen',
+    name: 'Abhinav kumar',
     role: 'Lead Strategist',
     bio: 'Sarah ensures every website we build is backed by a solid marketing strategy that generates leads.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
   },
   {
-    name: 'Marcus Thorne',
+    name: 'Trisha Mathra',
     role: 'Technical Director',
     bio: 'Marcus oversees our technical infrastructure, ensuring every site is fast, secure, and reliable.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',

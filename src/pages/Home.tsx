@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -108,13 +108,20 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
-        {/* Background Elements */}
+      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-white">
+        {/* Pattern Background Layer */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-indigo-50/50"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
-          <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-primary-200/20 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-[120px]"></div>
+          <div 
+            className="absolute inset-0 opacity-20 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-white/80 to-indigo-50/40" />
+          <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-primary-200/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-indigo-200/10 rounded-full blur-[120px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -257,8 +264,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-neutral-50 relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 scale-110">
+          <div 
+            className="absolute inset-0 opacity-25 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/70 to-white" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Our Expertise</h2>
             <p className="text-lg text-neutral-600">Everything you need to succeed online, from concept to launch and beyond.</p>
@@ -294,8 +314,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Selected Works</h2>
@@ -339,7 +372,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-primary-600 relative overflow-hidden">
+      <section className="py-24 bg-primary-600 relative overflow-hidden">
+        {/* Premium Background Pattern */}
+        <div className="absolute inset-0 z-0">
+          <motion.div 
+            style={{ 
+              y: useTransform(useScroll().scrollYProgress, [0, 1], [0, -80]),
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+            className="absolute inset-0 opacity-20 mix-blend-screen transition-opacity duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-600 via-transparent to-primary-600" />
+        </div>
+
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -mr-40 -mt-40 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10">
@@ -376,8 +423,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Pricing Preview */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-neutral-50 relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-25 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/70 to-white" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">Simple, Transparent Pricing</h2>
             <p className="text-lg text-neutral-600">Choose the perfect package for your business growth. No setup fees, no surprises.</p>
@@ -431,8 +491,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/10 to-white" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-neutral-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary-600/20 rounded-full blur-3xl -mb-36 -mr-36"></div>
             <div className="relative z-10 text-center max-w-3xl mx-auto">

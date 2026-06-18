@@ -54,27 +54,53 @@ const Testimonials: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
       {/* 1. Page Header Section */}
-      <section className="pt-20 pb-20 bg-neutral-50 px-4">
+      <section className="relative pt-20 pb-20 bg-neutral-50 px-4 border-b border-neutral-100 overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-20 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-neutral-50/70" />
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center relative z-10"
         >
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider mb-6">
             Client Success
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight font-display">
             What Our Clients Say
           </h1>
-          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto font-medium">
             Don't just take our word for it. Hear from business owners we've helped transform their online presence and reach new heights.
           </p>
         </motion.div>
       </section>
 
       {/* 2. Stats / Numbers Bar */}
-      <section className="py-12 bg-white border-y border-neutral-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-white border-y border-neutral-100 relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/60" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
             {stats.map((stat, i) => (
               <motion.div 
@@ -85,12 +111,12 @@ const Testimonials: React.FC = () => {
                 transition={{ delay: i * 0.1 }}
                 className={`flex items-center justify-center space-x-6 md:border-r border-neutral-100 last:border-0`}
               >
-                <div className="w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 shrink-0">
+                <div className="w-14 h-14 bg-white border border-primary-50 rounded-2xl flex items-center justify-center text-primary-600 shrink-0 shadow-sm">
                   <stat.icon size={28} />
                 </div>
                 <div>
-                  <div className="text-3xl font-display font-bold text-neutral-900">{stat.value}</div>
-                  <div className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-3xl font-display font-bold text-neutral-900 font-display">{stat.value}</div>
+                  <div className="text-sm font-semibold text-neutral-500 uppercase tracking-wider font-sans">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
@@ -99,23 +125,47 @@ const Testimonials: React.FC = () => {
       </section>
 
       {/* 3. Featured Testimonial (Big highlight) */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-4 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/40" />
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="bg-primary-600 rounded-[3rem] p-10 md:p-20 relative overflow-hidden text-white shadow-2xl shadow-primary-500/20"
           >
+            {/* Dark Pattern on Primary Bg */}
+            <div className="absolute inset-0 z-0">
+              <div 
+                className="absolute inset-0 opacity-15 mix-blend-soft-light"
+                style={{ 
+                  backgroundImage: "url('/Images/bg-pattern.jpeg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              />
+            </div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-32 -mb-32 blur-2xl"></div>
             
             <div className="relative z-10">
-              <div className="mb-10 inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+              <div className="mb-10 inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm shadow-sm border border-white/10">
                 <Quote size={40} className="text-primary-200" />
               </div>
               
-              <blockquote className="text-2xl md:text-4xl font-display font-medium leading-tight mb-12 italic">
+              <blockquote className="text-2xl md:text-4xl font-display font-medium leading-tight mb-12 italic font-display">
                 "They completely transformed our online presence. Within 2 weeks we got 10 new customers from our website. Best investment we made this year."
               </blockquote>
               
@@ -131,14 +181,14 @@ const Testimonials: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <div className="text-xl font-bold">Sarah Johnson</div>
-                    <div className="text-primary-200 font-medium">Owner, Bloom Florist</div>
+                    <div className="text-xl font-bold font-display">Sarah Johnson</div>
+                    <div className="text-primary-200 font-medium font-sans">Owner, Bloom Florist</div>
                   </div>
                 </div>
                 
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
+                    <Star key={i} size={24} className="text-yellow-400 fill-yellow-400 drop-shadow-sm" />
                   ))}
                 </div>
               </div>
@@ -148,11 +198,24 @@ const Testimonials: React.FC = () => {
       </section>
 
       {/* 4. Testimonial Cards Grid */}
-      <section className="py-24 px-4 bg-neutral-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-4 bg-neutral-50 relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-25 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-neutral-50/70" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6">More Happy Clients</h2>
-            <p className="text-lg text-neutral-600">We work across various industries, from local restaurants to professional services.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6 font-display text-center">More Happy Clients</h2>
+            <p className="text-lg text-neutral-600 font-medium">We work across various industries, from local restaurants to professional services.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -163,7 +226,7 @@ const Testimonials: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-10 rounded-3xl border border-neutral-100 hover:border-primary-100 hover:shadow-2xl transition-all duration-300 group"
+                className="bg-white/90 backdrop-blur-sm p-10 rounded-3xl border border-neutral-100 hover:border-primary-100 hover:shadow-2xl transition-all duration-300 group shadow-sm"
               >
                 <div className="flex mb-6">
                   {[...Array(t.rating)].map((_, idx) => (
@@ -180,8 +243,8 @@ const Testimonials: React.FC = () => {
                     <img src={t.avatar} alt={t.author} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                   <div>
-                    <div className="font-bold text-neutral-900">{t.author}</div>
-                    <div className="text-sm text-neutral-500 font-medium">{t.role}</div>
+                    <div className="font-bold text-neutral-900 font-display">{t.author}</div>
+                    <div className="text-sm text-neutral-500 font-medium font-sans">{t.role}</div>
                   </div>
                 </div>
               </motion.div>
@@ -191,8 +254,21 @@ const Testimonials: React.FC = () => {
       </section>
 
       {/* 5. Video or Image Quote Section */}
-      <section className="py-24 px-4 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-4 bg-white overflow-hidden relative">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/40" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="lg:flex lg:items-center lg:gap-20">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
@@ -200,17 +276,17 @@ const Testimonials: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2 mb-12 lg:mb-0"
             >
-              <div className="mb-8 p-3 bg-primary-50 rounded-2xl text-primary-600 inline-block">
+              <div className="mb-8 p-3 bg-white border border-primary-50 shadow-sm rounded-2xl text-primary-600 inline-block">
                 <ShieldCheck size={32} />
               </div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-neutral-900 mb-8 leading-tight tracking-tight">
-                Your Success is <br/> <span className="text-primary-600">Our Reputation.</span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-neutral-900 mb-8 leading-tight tracking-tight font-display">
+                Your Success is <br/> <span className="text-primary-600 italic">Our Reputation.</span>
               </h2>
               <blockquote className="text-xl text-neutral-600 mb-10 leading-relaxed font-light italic">
                 "We don't just build websites; we build partnerships. Seeing our clients' businesses flourish is what motivates the WebForge team every day."
               </blockquote>
               <div className="flex items-center space-x-4">
-                <div className="flex items-center text-primary-600 font-bold">
+                <div className="flex items-center text-primary-600 font-bold font-display">
                   <CheckCircle2 size={24} className="mr-3" />
                   Guaranteed Results
                 </div>
@@ -223,14 +299,14 @@ const Testimonials: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2 relative"
             >
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl relative z-10 aspect-video">
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl relative z-10 aspect-video group">
                 <img 
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
                   alt="Team happy with client" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-neutral-900/10 flex items-center justify-center">
-                  <div className="bg-white px-6 py-2 rounded-full font-bold text-sm text-neutral-900 shadow-xl border border-neutral-100 flex items-center">
+                  <div className="bg-white/90 backdrop-blur-sm px-6 py-2 rounded-full font-bold text-sm text-neutral-900 shadow-2xl border border-neutral-100 flex items-center">
                     <span className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></span>
                     We love helping businesses grow online
                   </div>
@@ -243,8 +319,20 @@ const Testimonials: React.FC = () => {
       </section>
 
       {/* 6. Final CTA Section */}
-      <section className="py-24 px-4 bg-neutral-900">
-        <div className="max-w-4xl mx-auto text-center relative">
+      <section className="py-24 px-4 bg-neutral-900 relative overflow-hidden">
+        {/* Subtle Dark Pattern layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-15 mix-blend-soft-light"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl -z-10"></div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -253,13 +341,13 @@ const Testimonials: React.FC = () => {
             <div className="w-16 h-16 bg-primary-600/20 rounded-3xl flex items-center justify-center text-primary-500 mx-auto mb-10 border border-primary-600/30">
               <Zap size={32} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">Ready to get results like these?</h2>
-            <p className="text-lg text-neutral-400 mb-12 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 font-display">Ready to get results like these?</h2>
+            <p className="text-lg text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
               Let's build a website that grows your business. We're ready when you are.
             </p>
             <NavLink
               to="/contact"
-              className="inline-flex items-center px-12 py-5 bg-primary-600 text-white rounded-full font-bold text-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/20 group active:scale-95"
+              className="inline-flex items-center px-12 py-5 bg-primary-600 text-white rounded-full font-bold text-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/20 group active:scale-95 shadow-[0_0_30px_rgba(245,89,81,0.2)]"
             >
               Get a Free Consultation
               <ArrowRight size={24} className="ml-2 group-hover:translate-x-1 transition-transform" />

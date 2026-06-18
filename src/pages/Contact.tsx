@@ -83,27 +83,53 @@ const Contact: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
       {/* 1. Page Header Section */}
-      <section className="pt-20 pb-20 bg-neutral-50 px-4 border-b border-neutral-100 text-center">
+      <section className="relative pt-20 pb-20 bg-neutral-50 px-4 border-b border-neutral-100 text-center overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-20 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-neutral-50/70" />
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto relative z-10"
         >
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider mb-6">
             Let's Talk
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight font-display">
             Get in Touch
           </h1>
-          <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed font-medium">
             Have a question or ready to start? We’d love to hear from you. Our team typically responds within 24 hours.
           </p>
         </motion.div>
       </section>
 
       {/* 2. Two-Column Section */}
-      <section className="py-24 px-4 bg-white" id="contact-form">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-4 bg-white relative overflow-hidden" id="contact-form">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/60" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             
             {/* LEFT COLUMN: Contact Form */}
@@ -111,9 +137,9 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-neutral-100 shadow-2xl shadow-neutral-200/50"
+              className="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-[2.5rem] border border-neutral-100 shadow-2xl shadow-neutral-200/50"
             >
-              <h2 className="text-3xl font-display font-bold text-neutral-900 mb-8">Send us a message</h2>
+              <h2 className="text-3xl font-display font-bold text-neutral-900 mb-8 font-display">Send us a message</h2>
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -131,7 +157,7 @@ const Contact: React.FC = () => {
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleChange}
-                          placeholder="John Doe"
+                          placeholder="issac dip"
                           className={`w-full px-5 py-4 bg-neutral-50 rounded-xl border transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 ${
                             errors.fullName ? 'border-rose-400 bg-rose-50/30' : 'border-neutral-200 focus:border-primary-500'
                           }`}
@@ -150,7 +176,7 @@ const Contact: React.FC = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder="john@example.com"
+                          placeholder="sam214@gmail.com"
                           className={`w-full px-5 py-4 bg-neutral-50 rounded-xl border transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 ${
                             errors.email ? 'border-rose-400 bg-rose-50/30' : 'border-neutral-200 focus:border-primary-500'
                           }`}
@@ -171,7 +197,7 @@ const Contact: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 7415369427"
                           className="w-full px-5 py-4 bg-neutral-50 rounded-xl border border-neutral-200 transition-all focus:outline-hidden focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500"
                         />
                       </div>
@@ -252,13 +278,13 @@ const Contact: React.FC = () => {
                     <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle2 size={40} />
                     </div>
-                    <h3 className="text-3xl font-display font-bold text-neutral-900 mb-4">Message Sent!</h3>
-                    <p className="text-neutral-600 text-lg mb-10 leading-relaxed">
+                    <h3 className="text-3xl font-display font-bold text-neutral-900 mb-4 font-display">Message Sent!</h3>
+                    <p className="text-neutral-600 text-lg mb-10 leading-relaxed font-medium">
                       Thank you! We've received your inquiry and we'll get back to you within 24 hours.
                     </p>
                     <button 
                       onClick={() => setIsSubmitted(false)}
-                      className="px-8 py-3 bg-neutral-900 text-white rounded-full font-bold hover:bg-neutral-800 transition-all"
+                      className="px-8 py-3 bg-neutral-900 text-white rounded-full font-bold hover:bg-neutral-800 transition-all shadow-lg"
                     >
                       Send Another Message
                     </button>
@@ -272,18 +298,18 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="py-6"
+              className="py-6 relative z-10"
             >
-              <h2 className="text-3xl font-display font-bold text-neutral-900 mb-10">Contact Information</h2>
+              <h2 className="text-3xl font-display font-bold text-neutral-900 mb-10 font-display">Contact Information</h2>
               
               <div className="space-y-10">
                 <div className="flex items-start space-x-6">
-                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0">
+                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0 shadow-sm">
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-neutral-900 mb-1">Email Us</h4>
-                    <a href="mailto:designpilot16@gmail.com" className="text-neutral-600 hover:text-primary-600 transition-colors text-lg">
+                    <h4 className="text-lg font-bold text-neutral-900 mb-1 font-sans">Email Us</h4>
+                    <a href="mailto:designpilot16@gmail.com" className="text-neutral-600 hover:text-primary-600 transition-colors text-lg font-medium">
                       designpilot16@gmail.com
                     </a>
                     <p className="text-xs text-neutral-400 mt-1 italic">Write to us anytime!</p>
@@ -291,37 +317,37 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-6">
-                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0">
+                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0 shadow-sm">
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-neutral-900 mb-1">Call Us</h4>
-                    <a href="tel:+15550000000" className="text-neutral-600 hover:text-primary-600 transition-colors text-lg">
-                      +1 (555) 000-0000
+                    <h4 className="text-lg font-bold text-neutral-900 mb-1 font-sans">Call Us</h4>
+                    <a href="tel:+15550000000" className="text-neutral-600 hover:text-primary-600 transition-colors text-lg font-medium">
+                      +91 9777094193
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-6">
-                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0">
+                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0 shadow-sm">
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-neutral-900 mb-1">Business Hours</h4>
-                    <p className="text-neutral-600 text-lg">Monday – Friday</p>
+                    <h4 className="text-lg font-bold text-neutral-900 mb-1 font-sans">Business Hours</h4>
+                    <p className="text-neutral-600 text-lg font-medium">Monday – Friday</p>
                     <p className="text-neutral-500 font-medium italic">9 AM – 6 PM PST</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-6">
-                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0">
+                  <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 shrink-0 shadow-sm">
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-neutral-900 mb-1">Our Studio</h4>
-                    <p className="text-neutral-600 text-lg">
-                      123 Design Lane, Creative District<br />
-                      San Francisco, CA 94103
+                    <h4 className="text-lg font-bold text-neutral-900 mb-1 font-sans">Our Studio</h4>
+                    <p className="text-neutral-600 text-lg font-medium">
+                      Infocity / Chandaka Industrial Estate, Chandrasekharpur,<br />
+                      Bhubaneswar, Odisha – 751024, India
                     </p>
                   </div>
                 </div>
@@ -329,7 +355,7 @@ const Contact: React.FC = () => {
 
               {/* 3. Social Links Section */}
               <div className="mt-16 pt-16 border-t border-neutral-100">
-                <h4 className="text-xl font-display font-bold text-neutral-900 mb-6">Follow Us</h4>
+                <h4 className="text-xl font-display font-bold text-neutral-900 mb-6 font-display">Follow Us</h4>
                 <div className="flex space-x-4">
                   {[
                     { icon: Twitter, color: 'hover:bg-[#1DA1F2]' },
@@ -340,7 +366,7 @@ const Contact: React.FC = () => {
                     <a 
                       key={i} 
                       href="#" 
-                      className={`w-14 h-14 bg-neutral-50 rounded-full flex items-center justify-center text-neutral-400 ${social.color} hover:text-white transition-all duration-300 shadow-sm`}
+                      className={`w-14 h-14 bg-neutral-50 rounded-full flex items-center justify-center text-neutral-400 ${social.color} hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1`}
                     >
                       <social.icon size={22} />
                     </a>
@@ -354,19 +380,30 @@ const Contact: React.FC = () => {
 
       {/* 4. Final CTA Section */}
       <section className="py-24 px-4 bg-neutral-900 overflow-hidden relative">
+        {/* Subtle Dark Pattern layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-10 mix-blend-soft-light"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        </div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full -ml-48 -mt-48 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-md rounded-[3rem] p-12 md:p-20 border border-white/10 text-center max-w-4xl mx-auto"
+            className="bg-white/5 backdrop-blur-md rounded-[3rem] p-12 md:p-20 border border-white/10 text-center max-w-4xl mx-auto shadow-[0_0_50px_rgba(245,89,81,0.1)]"
           >
             <div className="w-16 h-16 bg-primary-600/20 rounded-3xl flex items-center justify-center text-primary-500 mx-auto mb-10 border border-primary-600/30">
               <Zap size={32} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">Prefer to talk directly?</h2>
-            <p className="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight font-display">Prefer to talk directly?</h2>
+            <p className="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
               Book a free consultation call and we’ll discuss your project requirements, goals, and timeline in detail.
             </p>
             <div className="flex justify-center">

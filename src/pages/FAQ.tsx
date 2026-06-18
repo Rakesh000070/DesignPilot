@@ -54,27 +54,53 @@ const FAQ: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
       {/* 1. Page Header Section */}
-      <section className="pt-20 pb-20 bg-neutral-50 px-4 border-b border-neutral-100">
+      <section className="relative pt-20 pb-20 bg-neutral-50 px-4 border-b border-neutral-100 overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-20 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-neutral-50/70" />
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center relative z-10"
         >
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-semibold uppercase tracking-wider mb-6">
             Everything You Need to Know
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 mb-6 tracking-tight font-display">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto font-medium">
             Quick answers for busy business owners. We believe in clarity and transparency throughout our entire process.
           </p>
         </motion.div>
       </section>
 
       {/* 2. Accordion Section */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-24 px-4 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/60" />
+        </div>
+
+        <div className="max-w-3xl mx-auto relative z-10">
           <div className="space-y-4">
             {faqItems.map((item, index) => (
               <motion.div 
@@ -83,10 +109,10 @@ const FAQ: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className={`border rounded-2xl transition-all duration-300 ${
+                className={`border rounded-2xl transition-all duration-300 backdrop-blur-sm ${
                   openIndex === index 
-                    ? 'border-primary-200 shadow-lg shadow-primary-500/5 bg-white' 
-                    : 'border-neutral-100 hover:border-neutral-200 bg-neutral-50/30'
+                    ? 'border-primary-200 shadow-xl shadow-primary-500/5 bg-white/90' 
+                    : 'border-neutral-100 hover:border-neutral-200 bg-white/40'
                 }`}
               >
                 <button
@@ -95,7 +121,7 @@ const FAQ: React.FC = () => {
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <span className={`font-bold text-lg transition-colors ${
+                  <span className={`font-bold text-lg transition-colors font-display ${
                     openIndex === index ? 'text-primary-600' : 'text-neutral-900'
                   }`}>
                     {item.q}
@@ -116,7 +142,7 @@ const FAQ: React.FC = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                     >
-                      <div className="px-6 pb-8 text-neutral-600 leading-relaxed text-base border-t border-neutral-100 pt-6 mt-0">
+                      <div className="px-6 pb-8 text-neutral-600 leading-relaxed text-base border-t border-neutral-100 pt-6 mt-0 font-medium">
                         {item.a}
                       </div>
                     </motion.div>
@@ -126,19 +152,19 @@ const FAQ: React.FC = () => {
             ))}
           </div>
           
-          <div className="mt-16 p-8 bg-primary-50 rounded-[2rem] border border-primary-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-16 p-8 bg-primary-50/80 backdrop-blur-sm rounded-[2rem] border border-primary-100 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-primary-500/5">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary-600 shadow-sm shrink-0">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary-600 shadow-sm shrink-0 border border-primary-50">
                 <MessagesSquare size={24} />
               </div>
-              <div className="text-left">
+              <div className="text-left font-sans">
                 <div className="font-bold text-neutral-900">Need more detailed info?</div>
-                <div className="text-sm text-neutral-600">Our design experts are ready to help you.</div>
+                <div className="text-sm text-neutral-600 font-medium font-sans">Our design experts are ready to help you.</div>
               </div>
             </div>
             <NavLink 
               to="/contact" 
-              className="px-6 py-3 bg-white text-primary-600 border border-primary-100 font-bold rounded-full hover:bg-primary-600 hover:text-white transition-all shadow-sm active:scale-95"
+              className="px-6 py-3 bg-white text-primary-600 border border-primary-200 font-bold rounded-full hover:bg-primary-600 hover:text-white transition-all shadow-sm active:scale-95"
             >
               Inquire Privately
             </NavLink>
@@ -148,6 +174,17 @@ const FAQ: React.FC = () => {
 
       {/* 3. Final CTA Section */}
       <section className="py-24 px-4 bg-neutral-900 overflow-hidden relative">
+        {/* Subtle Dark Pattern layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-10 mix-blend-soft-light"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -158,8 +195,8 @@ const FAQ: React.FC = () => {
             <div className="w-16 h-16 bg-primary-600/20 rounded-3xl flex items-center justify-center text-primary-500 mx-auto mb-10 border border-primary-600/30">
               <Zap size={32} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">Still have questions?</h2>
-            <p className="text-lg text-neutral-400 mb-12 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight font-display">Still have questions?</h2>
+            <p className="text-lg text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed font-sans">
               Get a free consultation and we’ll help you choose the right plan for your business growth. No pressure, just honest advice.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

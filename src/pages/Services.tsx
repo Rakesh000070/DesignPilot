@@ -100,8 +100,19 @@ const Services: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-20 pb-24 bg-neutral-900 text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#4f46e5_0%,transparent_50%)] opacity-30"></div>
+      <section className="pt-20 pb-24 bg-neutral-900 text-white relative overflow-hidden">
+        {/* Subtle Dark Pattern layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-10 mix-blend-soft-light"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#f55951_0%,transparent_50%)] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,10 +120,10 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
-              Our <span className="text-primary-400">Digital Solutions</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight font-display">
+              Our <span className="text-primary-400 font-extrabold">Digital Solutions</span>
             </h1>
-            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed font-light">
               We provide end-to-end web services designed to help small businesses compete at the highest level in the digital age.
             </p>
           </motion.div>
@@ -120,8 +131,21 @@ const Services: React.FC = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0 text-[0]">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/60" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <motion.div
@@ -130,18 +154,18 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-[2rem] border border-neutral-100 hover:border-primary-100 hover:shadow-2xl transition-all duration-300 group flex flex-col"
+                className="bg-white/90 backdrop-blur-sm p-8 rounded-[2rem] border border-neutral-100 hover:border-primary-200 hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-sm"
               >
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-8 ${service.color} group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-8 ${service.color} group-hover:scale-110 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm shadow-primary-500/10`}>
                   <service.icon size={28} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-neutral-900 mb-4">{service.title}</h3>
-                <p className="text-neutral-600 mb-8 leading-relaxed flex-grow">
+                <h3 className="text-2xl font-display font-bold text-neutral-900 mb-4 font-display">{service.title}</h3>
+                <p className="text-neutral-600 mb-8 leading-relaxed flex-grow font-medium">
                   {service.description}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm text-neutral-500">
+                    <li key={i} className="flex items-center text-sm text-neutral-500 font-medium">
                       <Check size={16} className="text-primary-500 mr-3 shrink-0" />
                       {feature}
                     </li>
@@ -149,7 +173,7 @@ const Services: React.FC = () => {
                 </ul>
                 <NavLink 
                   to="/contact" 
-                  className="inline-flex items-center text-primary-600 font-bold hover:text-primary-700 transition-colors group/link"
+                  className="inline-flex items-center text-primary-600 font-bold hover:text-primary-700 transition-colors group/link font-display"
                 >
                   Get Started <ArrowRight size={18} className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                 </NavLink>
@@ -160,11 +184,24 @@ const Services: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-25 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-neutral-50/70" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6 tracking-tight">How We Work</h2>
-            <p className="text-lg text-neutral-600">A streamlined, transparent process that ensures your project is delivered on time and exceeds expectations.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6 tracking-tight font-display">How We Work</h2>
+            <p className="text-lg text-neutral-600 font-medium">A streamlined, transparent process that ensures your project is delivered on time and exceeds expectations.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
@@ -178,16 +215,16 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative z-10 text-center"
+                className="relative z-10 text-center group"
               >
-                <div className="w-20 h-20 bg-white border-4 border-neutral-50 rounded-full flex items-center justify-center text-primary-600 shadow-lg mx-auto mb-8 group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 bg-white border-4 border-neutral-50 rounded-full flex items-center justify-center text-primary-600 shadow-lg mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
                   <step.icon size={32} />
                 </div>
-                <div className="bg-primary-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold absolute top-0 left-1/2 translate-x-4 -translate-y-2 border-2 border-white">
+                <div className="bg-primary-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold absolute top-0 left-1/2 translate-x-4 -translate-y-2 border-2 border-white shadow-md">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-display font-bold text-neutral-900 mb-3">{step.title}</h3>
-                <p className="text-neutral-500 leading-relaxed px-4">{step.description}</p>
+                <h3 className="text-xl font-display font-bold text-neutral-900 mb-3 font-display">{step.title}</h3>
+                <p className="text-neutral-500 leading-relaxed px-4 font-medium">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -195,8 +232,21 @@ const Services: React.FC = () => {
       </section>
 
       {/* Feature Highlight */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Pattern Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-30 mix-blend-multiply"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0 bg-white/40" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:flex lg:items-center lg:gap-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -204,8 +254,8 @@ const Services: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2 mb-12 lg:mb-0"
             >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-8 tracking-tight">Focused on Mobile Performance</h2>
-              <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-8 tracking-tight font-display">Focused on Mobile Performance</h2>
+              <p className="text-lg text-neutral-600 mb-8 leading-relaxed font-medium">
                 With over 60% of web traffic coming from mobile devices, we prioritize "Mobile-First" design for every project. Your site won't just fit on a phone—it will excel.
               </p>
               
@@ -215,12 +265,12 @@ const Services: React.FC = () => {
                   { title: 'Touch-Friendly', desc: 'Large buttons and easy nav.', icon: Smartphone },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
-                    <div className="p-3 bg-primary-50 rounded-lg text-primary-600 mr-4">
+                    <div className="p-3 bg-primary-50 rounded-lg text-primary-600 mr-4 shadow-sm border border-primary-100">
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-neutral-900">{item.title}</h4>
-                      <p className="text-sm text-neutral-500">{item.desc}</p>
+                      <h4 className="font-bold text-neutral-900 font-sans">{item.title}</h4>
+                      <p className="text-sm text-neutral-500 font-medium">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -258,16 +308,27 @@ const Services: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 bg-neutral-900 relative overflow-hidden">
+        {/* Subtle Dark Pattern layer */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 opacity-15 mix-blend-soft-light"
+            style={{ 
+              backgroundImage: "url('/Images/bg-pattern.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8 tracking-tight">Not Sure Which Service <br/> Your Business Needs?</h2>
-            <p className="text-xl text-neutral-400 mb-12">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8 tracking-tight font-display">Not Sure Which Service <br/> Your Business Needs?</h2>
+            <p className="text-xl text-neutral-400 mb-12 font-light italic leading-relaxed">
               Schedule a free 15-minute consultation. We'll audit your current presence and give you an honest recommendation.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -279,7 +340,7 @@ const Services: React.FC = () => {
               </NavLink>
               <NavLink 
                 to="/pricing" 
-                className="px-10 py-5 bg-white/5 text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+                className="px-10 py-5 bg-white/5 text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
               >
                 View Pricing Packages
               </NavLink>

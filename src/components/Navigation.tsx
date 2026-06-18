@@ -41,14 +41,17 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center space-x-2 group">
-            <div className="bg-primary-600 p-1.5 rounded-lg text-white group-hover:bg-primary-700 transition-colors">
-              <Globe size={24} />
-            </div>
-            <span className="text-xl font-display font-bold text-neutral-900 tracking-tight">
-             Design <span className="text-primary-600">Pilot</span>
-            </span>
-          </NavLink>
+         <NavLink to="/" className="flex items-center gap-3 group">
+  <img
+    src="Images/logo.png"
+    alt="DesignPilot"
+    className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+  />
+
+  <span className="text-xl font-display font-bold text-neutral-900 tracking-tight">
+    Design <span className="text-primary-600">Pilot</span>
+  </span>
+</NavLink>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">

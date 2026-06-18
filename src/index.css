@@ -29,8 +29,14 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
-    @apply font-sans text-neutral-800 bg-white;
+    @apply font-sans text-neutral-800 bg-neutral-50 antialiased;
+    scrollbar-gutter: stable;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -52,15 +52,15 @@ const portfolio = [
 
 const testimonials = [
   {
-    quote: "WebForge transformed our outdated site into a modern powerhouse. Our leads have increased by 40% since the launch.",
-    author: "Sarah Jenkins",
-    role: "Proprietor, Bloom & Co.",
-    rating: 5,
+    quote: "DesignPilot transformed our outdated site into a modern powerhouse. Our leads have increased by 40% since the launch.",
+    author: "Abhinav kumar",
+    role: "Manager.",
+    rating: 4.2,
   },
   {
     quote: "The attention to detail and professional communication was unlike any other agency we've worked with. Highly recommended!",
-    author: "Michael Chen",
-    role: "Director, TechPath Solutions",
+    author: "Arnav Pandit",
+    role: "Associate, TechPath Solutions",
     rating: 5,
   },
 ];
@@ -127,15 +127,15 @@ const Home: React.FC = () => {
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100/50 text-primary-700 text-sm font-bold uppercase tracking-wider mb-6 backdrop-blur-sm border border-primary-200/50">
                 <Zap size={16} className="mr-2 fill-primary-600" />
-                Next-Gen Web Solutions
+                Creative Navigation
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-neutral-900 leading-[1.05] mb-5 tracking-tight">
-                We Build Websites That <br/> 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-neutral-900 font-black">Bring You More Clients</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-neutral-900 leading-[1.1] mb-6 tracking-tight">
+                Strategic Web Design That <br className="hidden md:block" /> 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-neutral-900 font-black">Turns Visitors Into Customers</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-neutral-600 mb-8 leading-relaxed max-w-xl font-medium">
+              <p className="text-xl md:text-2xl text-neutral-600 mb-10 leading-relaxed max-w-lg font-medium">
                 High-performance, stunning designs crafted to convert visitors into loyal customers. Elevate your professional presence today.
               </p>
               
@@ -156,7 +156,7 @@ const Home: React.FC = () => {
                     <div className="flex -space-x-2">
                       {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-neutral-200 overflow-hidden">
-                          <img src={`https://i.pravatar.cc/100?img =${i + 10}`} alt="User" className="w-full h-full object-cover" />
+                          <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="w-full h-full object-cover" />
                         </div>
                       ))}
                     </div>
@@ -214,7 +214,7 @@ const Home: React.FC = () => {
                 <div className="relative z-10 p-4 bg-white/50 backdrop-blur-md rounded-3xl border border-white/50 shadow-2xl">
                   <div className="rounded-2xl overflow-hidden shadow-xl border border-neutral-200/50 text-[0]">
                     <img 
-                      src="Images/Home-pade-image.jpeg" 
+                      src="/Images/Home-pade-image.jpeg" 
                       alt="Modern web design dashboard showing performance metrics" 
                       className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                       loading="lazy"
@@ -357,9 +357,12 @@ const Home: React.FC = () => {
                 className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 text-white"
               >
                 <div className="flex mb-4">
-                  {[...Array(t.rating)].map((_, i) => (
+                  {[...Array(Math.floor(t.rating))].map((_, i) => (
                     <Star key={i} size={18} className="text-yellow-400 fill-yellow-400 mr-1" />
                   ))}
+                  {t.rating % 1 !== 0 && (
+                    <Star key="half" size={18} className="text-yellow-400 fill-yellow-400/50 mr-1" />
+                  )}
                 </div>
                 <p className="text-xl italic mb-6 leading-relaxed font-medium">"{t.quote}"</p>
                 <div>

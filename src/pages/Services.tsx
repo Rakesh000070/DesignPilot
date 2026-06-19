@@ -145,7 +145,13 @@ const Services: React.FC = () => {
           <div className="absolute inset-0 bg-white/60" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <motion.div
@@ -180,7 +186,7 @@ const Services: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Process Section */}
@@ -198,7 +204,13 @@ const Services: React.FC = () => {
           <div className="absolute inset-0 bg-neutral-50/70" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6 tracking-tight font-display">How We Work</h2>
             <p className="text-lg text-neutral-600 font-medium">A streamlined, transparent process that ensures your project is delivered on time and exceeds expectations.</p>
@@ -228,7 +240,7 @@ const Services: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Feature Highlight */}

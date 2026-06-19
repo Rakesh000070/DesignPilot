@@ -227,10 +227,16 @@ const About: React.FC = () => {
           <div className="absolute inset-0 bg-neutral-50/60" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">Values We Live By</h2>
-            <p className="text-lg text-neutral-600">Our culture is built on integrity, innovation, and a relentless focus on our clients\' results.</p>
+            <p className="text-lg text-neutral-600">Our culture is built on integrity, innovation, and a relentless focus on our clients' results.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -253,7 +259,7 @@ const About: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Team Section */}
@@ -325,7 +331,13 @@ const About: React.FC = () => {
             }}
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="lg:grid lg:grid-cols-2 gap-12 items-center bg-white/5 p-10 md:p-16 rounded-[3rem] border border-white/10 backdrop-blur-sm shadow-[0_0_50px_rgba(245,89,81,0.1)]">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-8">Why Partner With DesignPilot?</h2>
@@ -365,7 +377,7 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

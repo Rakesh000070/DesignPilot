@@ -16,12 +16,12 @@ const categories = ['All', 'E-commerce', 'Professional Services', 'Local Busines
 const projects = [
   {
     id: 1,
-    title: 'GreenLeaf Organic',
-    category: 'E-commerce',
-    description: 'A comprehensive online marketplace for organic produce with seamless inventory management.',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop',
-    features: ['Custom Checkout', 'Live Stock Sync', 'Customer Accounts'],
-    challenge: 'Need for a mobile-first shopping experience that handled seasonal inventory changes automatically.',
+    title: 'Horizon Riders',
+    category: 'Local Business',
+    description: 'Premium motorcycle rental platform that enables users to explore, compare, and book bikes for city rides, road trips, and adventure tours.',
+    image: 'Images/Project-1.png',
+    features: ['route exploration', 'contact inquiry form', 'premium UI'],
+    challenge: 'Implementing a scalable React + TypeScript architecture, ensuring responsive design across devices, and maintaining high-performance animations with a premium user experience.',
   },
   {
     id: 2,
@@ -150,7 +150,13 @@ const Portfolio: React.FC = () => {
           <div className="absolute inset-0 bg-white/60" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <AnimatePresence mode="popLayout" initial={false}>
               {filteredProjects.map((project) => (
@@ -216,7 +222,7 @@ const Portfolio: React.FC = () => {
               ))}
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Expertise Stats */}
@@ -297,7 +303,13 @@ const Portfolio: React.FC = () => {
           <div className="absolute inset-0 bg-white/40" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        >
           <h2 className="text-3xl font-display font-bold text-neutral-900 mb-8 font-display">Not Seeing Your Industry?</h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-10 font-medium">
             We've worked with businesses across hundreds of niches. Contact us to see a private portfolio of work relevant to your specific business type.
@@ -308,7 +320,7 @@ const Portfolio: React.FC = () => {
           >
             Inquire Privately <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </NavLink>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
